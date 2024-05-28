@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>livetym</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="mybtn" onclick="btnprs();">0</button>
+    <h3 id="geating"></h3>
+    <h3 id="realtym"></h3>
+    <script>
+        let numclk=0;
+        function btnprs(){
+          let button=document.querySelector('#mybtn');
+          numclk++;
+          button.textContent = numclk;
+          if(numclk%2==0){
+            button.classList.remove('odd');
+            button.classList.add('even');
+          }else{
+            button.classList.remove('even');
+            button.classList.add('odd');
+          }
+        }
+      function dogreating(personnm='Dear'){
+        let mydate=new Date();
+    console.log(mydate);
+    let hrs=mydate.getHours();
+    let heading=document.querySelector('#geating');
+    if(hrs>3&&hrs<12){
+      heading.innerText=`Good Morning ${personnm}`;
+    }else if(hrs>12&&hrs<16){
+      heading.innerText=`Good Afternoon ${personnm}`;
+    }else if(hrs>=16&&hrs<22){
+      heading.innerText=`Good Evening ${personnm}`;
+    }
+    else{
+      heading.innerText=`Good Night ${personnm}`;
+    }
+      }
+      dogreating();
+      // function tmd(){
+      //   let mytmd=new Date();
+      // console.log(mytmd.getDate);
+      // }
+      // let heading1=document.querySelector('#realtym');
+      // heading1.innerText=`${tmd()}`;
+      alert('This page wish You Gd Mrng,Gd Evng,Gd Nyt according to the Tym');
+    </script>
+</body>
+</html>
